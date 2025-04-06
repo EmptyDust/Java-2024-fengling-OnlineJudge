@@ -71,10 +71,18 @@ The system uses a MySQL database with the following structure:
 
 2. **Set up the database**
    - Create a MySQL database
-   - Run the SQL scripts in the project's SQL directory to set up the schema
+   - Run the SQL script to set up the schema:
+     ```bash
+     mysql -u your_username -p < sql/setup.sql
+     ```
 
 3. **Configure database connection**
-   - Update the connection parameters in the DatabaseManager class
+   - Update the connection parameters in the DatabaseManager class 
+     (located at src/cn/edu/shiep/fengling/DatabaseManager.java)
+   - Modify the following line with your MySQL credentials:
+     ```java
+     String url = "jdbc:mysql://localhost:3306/mydb", user = "root", pwd = "root";
+     ```
 
 4. **Build and run the project**
    - Using an IDE like IntelliJ IDEA or Eclipse
